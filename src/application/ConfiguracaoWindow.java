@@ -1,6 +1,8 @@
 package application;
 
 import javax.swing.*;
+
+import java.awt.MenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -11,8 +13,9 @@ public class ConfiguracaoWindow extends JDialog {
     JTextField fieldPasta, fieldSucesso, fieldError;
     JCheckBox checkBoxAutomatico;
     JButton buttonSalvar;
+    MenuItem aparecer;
 
-    public ConfiguracaoWindow() {
+    public ConfiguracaoWindow(MenuItem visible) {
         setTitle("Configuracao do sistema");
         setSize(250, 250);
         setLayout(null);
@@ -22,6 +25,7 @@ public class ConfiguracaoWindow extends JDialog {
         setLocationRelativeTo(null);
         criarComponentes();
         adicionarAtionListener();
+        aparecer = visible;
     }
 
     private void criarComponentes() {
@@ -76,6 +80,8 @@ public class ConfiguracaoWindow extends JDialog {
                 context.setPathErro(fieldError.getText());
                 context.setPathSucesso(fieldSucesso.getText());
                 
+                aparecer.setEnabled(!checkBoxAutomatico.isSelected());
+                                
                 try {
 					context.recordPath();
 				} catch (IOException e1) {
@@ -85,8 +91,5 @@ public class ConfiguracaoWindow extends JDialog {
         });
     }
 
-    public static void main(String[] args) {
-        new ConfiguracaoWindow().setVisible(true);
-    }
 
 }

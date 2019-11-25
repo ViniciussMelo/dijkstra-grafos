@@ -52,15 +52,18 @@ public class Principal {
         menuItemConfiguracao.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ConfiguracaoWindow().setVisible(true);
+                new ConfiguracaoWindow(menuItemVisivel).setVisible(true);
             }
         });
 
         popupMenu.add(menuItemConfiguracao);
-        popupMenu.addSeparator();
-        popupMenu.add(menuItemVisivel);
-        popupMenu.addSeparator();
-        popupMenu.add(menuItemSair);
+        /* Mexer no popupMenu.add(menuItemVisivel); / popupMenu.addSeparator(); */
+        	popupMenu.addSeparator();
+            popupMenu.add(menuItemVisivel); 
+        	popupMenu.addSeparator();
+            popupMenu.add(menuItemSair);
+
+            menuItemVisivel.setEnabled(!context.isAutomatico());
 
         try {
             systemTray.add(trayIcon);
