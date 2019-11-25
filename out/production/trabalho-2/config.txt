@@ -1,0 +1,1 @@
+PATH_CONFIG=resources/config.txt;PATH_SUCCESS=C:\\succes;PATH_ERROR=C:\\error;IS_AUTOMATIC=true
