@@ -60,6 +60,11 @@ public class ConfigGetter {
                 	context.setAutomatico(config.getValue().toLowerCase().equals("true"));
                     break;
                 }
+                
+                case Config.PATH_ARQUIVOS:{
+                	context.setPathArquivos(config.getValue());
+                	break;
+                }
             }
 
         }

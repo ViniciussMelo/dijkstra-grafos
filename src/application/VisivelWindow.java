@@ -149,18 +149,6 @@ public class VisivelWindow extends JDialog{
 		for (int i = 0; i < colunas.length; i++) {
 			modelo.addColumn(colunas[i]);
 		}
-		
-		list = file.getAllLines();
-		
-		for (int i = 0; i < list.size(); i++) {
-			array = list.get(i).split(";");
-			codOrigem  = array[0]; 
-			cidOrigem  = array[1]; 
-			codDestino = array[2];
-			cidDestino = array[3];
-			distancia  = array[4];
-			modelo.addRow(new Object[] {codOrigem, cidOrigem, codDestino, cidDestino, distancia});
-		}		
 		table.setModel(modelo);
 	}
 	
@@ -226,6 +214,14 @@ public class VisivelWindow extends JDialog{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		buttonPesqusiar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
@@ -299,6 +295,22 @@ public class VisivelWindow extends JDialog{
     	return retorno;
     }
 	
+    public static void insereDadosTabela() {
+
+		
+		/*list = file.getAllLines();
+		
+		for (int i = 0; i < list.size(); i++) {
+			array = list.get(i).split(";");
+			codOrigem  = array[0]; 
+			cidOrigem  = array[1]; 
+			codDestino = array[2];
+			cidDestino = array[3];
+			distancia  = array[4];
+			modelo.addRow(new Object[] {codOrigem, cidOrigem, codDestino, cidDestino, distancia});
+		}*/
+    }
+    
 	public static void main(String[] args) throws IOException {
         new VisivelWindow().setVisible(true);
     }

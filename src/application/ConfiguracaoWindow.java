@@ -31,7 +31,7 @@ public class ConfiguracaoWindow extends JDialog {
 
         fieldPasta = new JTextField();
         fieldPasta.setBounds(70, 10, 160, 25);
-        fieldPasta.setText(Principal.context.getPathConfig());
+        fieldPasta.setText(Principal.context.getPathArquivos());
         getContentPane().add(fieldPasta);
 
 
@@ -72,15 +72,16 @@ public class ConfiguracaoWindow extends JDialog {
                 ApplicationContext context = Principal.context;
 
                 context.setAutomatico(checkBoxAutomatico.isSelected());
-                context.setPathConfig(fieldPasta.getText());
                 context.setPathErro(fieldError.getText());
                 context.setPathSucesso(fieldSucesso.getText());
+                context.setPathArquivos(fieldPasta.getText());
                 
                 try {
 					context.recordPath();
 				} catch (IOException e1) {
 					JOptionPane.showMessageDialog(null, "Erro ao gravar caminho: \n"+e1.getMessage());
 				}
+                dispose();
             }
         });
     }

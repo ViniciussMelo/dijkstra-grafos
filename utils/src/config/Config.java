@@ -8,6 +8,7 @@ public class Config {
     public final static String PATH_SUCCESS = "PATH_SUCCESS";
     public final static String PATH_CONFIG = "PATH_CONFIG";
     public final static String IS_AUTOMATIC = "IS_AUTOMATIC";
+    public final static String PATH_ARQUIVOS = "PATH_ARQUIVOS";
     public final static HashMap<String, String> separators = new HashMap<>();
 
     private String value;

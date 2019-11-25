@@ -16,6 +16,7 @@ public class ApplicationContext {
     private String pathErro = "";
     private String pathSucesso = "";
     private String pathConfig = "";
+    private String pathArquivos = "";
 
     public boolean isAutomatico() {
         return automatico;
@@ -49,6 +50,14 @@ public class ApplicationContext {
         this.pathConfig = pathConfig;
     }
     
+    public void setPathArquivos(String pathArquivos) {
+    	this.pathArquivos = pathArquivos;
+    }
+    
+    public String getPathArquivos() {
+    	return this.pathArquivos;
+    }
+    
     public void recordPath() throws IOException {
     	FileWrite file = new FileWrite(pathConfig);
     	String config = new ConfigBuilder()
@@ -56,6 +65,7 @@ public class ApplicationContext {
                 .addConfig(Config.PATH_SUCCESS, pathSucesso)
                 .addConfig(Config.PATH_ERROR, pathErro)
                 .addConfig(Config.IS_AUTOMATIC, isAutomatico() ? "true" : "false")
+                .addConfig(Config.PATH_ARQUIVOS, pathArquivos)
                 .toString();
 
     	file.write(config);
