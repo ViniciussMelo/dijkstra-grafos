@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549b2685-3a57-4474-93f8-d9add400a73e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Dijkstra.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" beforeDir="false" afterPath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rotas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rotas.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/VisivelWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/VisivelWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MenorCaminho">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="ConfigGetter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="config.ConfigGetter" />
       <module name="utils" />
@@ -144,8 +140,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MenorCaminho" />
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.MenorCaminho" />
         <item itemvalue="Application.Dijkstra" />
         <item itemvalue="Application.ConfigGetter" />
         <item itemvalue="Application.FileReader" />

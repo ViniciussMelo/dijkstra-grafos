@@ -227,7 +227,7 @@ public class VisivelWindow extends JDialog{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser jfPastas = new JFileChooser(context.getPathArquivos());
+				JFileChooser jfPastas = new JFileChooser(Principal.context.getPathArquivos());
 				jfPastas.setDialogTitle("Importar arquivos");
 				jfPastas.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				jfPastas.showOpenDialog(null);
@@ -264,7 +264,7 @@ public class VisivelWindow extends JDialog{
 			list.add(texto);
 		}
 		if("".equals(caminhoArquivo)) {
-			File teste = new File(context.getPathArquivos());
+			File teste = new File(Principal.context.getPathArquivos());
 			String[] arquivos = teste.list();
 
 			if(arquivos.length > 0) {
@@ -284,13 +284,13 @@ public class VisivelWindow extends JDialog{
 					maxNum = 0;
 				}
 
-				caminhoArquivo = context.getPathArquivos() +"\\rota-"+ maxNum + ".txt";
+				caminhoArquivo = Principal.context.getPathArquivos() +"\\rota-"+ maxNum + ".txt";
 			}
 			else {
-				caminhoArquivo = context.getPathArquivos() +"\\rota-0.txt";
+				caminhoArquivo = Principal.context.getPathArquivos() +"\\rota-0.txt";
 			}
 		}
-		context.recordWay(list, caminhoArquivo);
+		Principal.context.recordWay(list, caminhoArquivo);
 	}
 	
 	public void limpaCampos() {
