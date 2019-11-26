@@ -1,5 +1,5 @@
 1;Siderópolis;2;Criciúma;30
-2;Siderópolis;3;Forquilhina;43
-2;Siderópolis;4;Forquilhina;40
+1;Siderópolis;3;Forquilhina;43
+3;Siderópolis;4;Forquilhina;43
 1;Siderópolis;4;Forquilhina;25
 4;Siderópolis;5;Forquilhina;10

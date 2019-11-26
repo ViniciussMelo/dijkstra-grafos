@@ -25,7 +25,7 @@ import com.sun.xml.internal.bind.CycleRecoverable.Context;
 import file.FileReader;
 
 public class VisivelWindow extends JDialog{
-	ApplicationContext context = Principal.context;
+	public final static String PATH_WAY_FILE = "resources/rotas.txt";
 	
 	JLabel lblBusca, lblCodOrigem, lblCidOrigem, lblCodDestino, lblCidDestino, lblDistancia, lblOrigem, lblDestino;
 	JTextField fieldBusca, fieldCodOrigem, fieldCidOrigem, fieldCodDestino, fieldCidDestino, fieldDistancia;
@@ -33,7 +33,7 @@ public class VisivelWindow extends JDialog{
 	JTable table;
     
 	String caminhoArquivo = "";
-	
+
 	public VisivelWindow() throws IOException {
 		setTitle("Dijsktra - Busca por melhor caminho");
 		setSize(800,690);
@@ -63,7 +63,7 @@ public class VisivelWindow extends JDialog{
 		// ---------------- -------------------- \\	
 		
 		// ------------- Origem ---------------- \\
-		lblCodOrigem = new JLabel("Código: ");
+		lblCodOrigem = new JLabel("Cï¿½digo: ");
 		lblCodOrigem.setBounds(10, 70, 50, 25);
 		getContentPane().add(lblCodOrigem);
 		
@@ -85,7 +85,7 @@ public class VisivelWindow extends JDialog{
 		// ---------------- -------------------- \\		
 		
 		// ------------- Destino ---------------- \\
-		lblCodDestino = new JLabel("Código: ");
+		lblCodDestino = new JLabel("Cï¿½digo: ");
 		lblCodDestino.setBounds(10, 120, 50, 25);
 		getContentPane().add(lblCodDestino);
 		
@@ -106,7 +106,7 @@ public class VisivelWindow extends JDialog{
 		getContentPane().add(lblDestino);		
 		// ---------------- -------------------- \\
 		
-		// ------------- Distância ---------------- \\
+		// ------------- Distï¿½ncia ---------------- \\
 		lblDistancia = new JLabel("KM:");
 		lblDistancia.setBounds(30, 170, 50, 25);
 		getContentPane().add(lblDistancia);
@@ -147,7 +147,7 @@ public class VisivelWindow extends JDialog{
 	}
 	
 	private void configuraTabela() throws IOException {
-		String [] colunas = {"Código Origem", "Cidade Origem", "Código Destino", "Cidade Destino", "Distância"};
+		String [] colunas = {"Cï¿½digo Origem", "Cidade Origem", "Cï¿½digo Destino", "Cidade Destino", "Distï¿½ncia"};
 		DefaultTableModel modelo = new DefaultTableModel();
 		
 		for (int i = 0; i < colunas.length; i++) {
@@ -171,20 +171,20 @@ public class VisivelWindow extends JDialog{
 				cidDestino = fieldCidDestino.getText();
 				distancia  = fieldDistancia.getText();
 				
-				//Passar os campos obrigatórios para um arraylist
+				//Passar os campos obrigatï¿½rios para um arraylist
 				campos.add(codOrigem);
 				campos.add(cidOrigem);
 				campos.add(codDestino);
 				campos.add(cidDestino);
 				campos.add(distancia);
 				
-				//Passar os campos numéricos para um arraylist
+				//Passar os campos numï¿½ricos para um arraylist
 				camposNumericos.add(codOrigem);
 				camposNumericos.add(codDestino);
 				camposNumericos.add(distancia);				
 				
 				if(!verificaCamposNumericos(camposNumericos)){
-					JOptionPane.showMessageDialog(null, "Os campos 'código' e 'distância' só aceitam números!'");
+					JOptionPane.showMessageDialog(null, "Os campos 'cï¿½digo' e 'distï¿½ncia' sï¿½ aceitam nï¿½meros!'");
 				}else if(!verificaCamposObrigatorios(campos)){
 					JOptionPane.showMessageDialog(null, "Deve-se preencher todos os campos!");					
 				}else {
@@ -221,22 +221,22 @@ public class VisivelWindow extends JDialog{
 				
 			}
 		});
-		
+
 		//PESQUISAR
 		buttonPesqusiar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfPastas = new JFileChooser(context.getPathArquivos());
 				jfPastas.setDialogTitle("Importar arquivos");
 				jfPastas.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				jfPastas.showOpenDialog(null);
-				
+
 				File arquivo = jfPastas.getSelectedFile();
 				caminhoArquivo = arquivo.toString();
-				
+
 				fieldBusca.setText(caminhoArquivo);
-				
+
 				try {
 					insereDadosTabela(arquivo);
 				} catch (IOException e1) {
@@ -246,11 +246,11 @@ public class VisivelWindow extends JDialog{
 		});
 	}
 	
-	public void gravaDadosTabela(DefaultTableModel modelo, int sizeTabela) throws IOException {		
+	public void gravaDadosTabela(DefaultTableModel modelo, int sizeTabela) throws IOException {
 		ArrayList<String> list = new ArrayList<String>();
 		String texto;
 		int maxNum = 0;
-		
+
 		for (int i = 0; i < sizeTabela; i++) {
 			texto = "";
 			for (int j = 0; j < modelo.getColumnCount(); j++) {
@@ -266,16 +266,16 @@ public class VisivelWindow extends JDialog{
 		if("".equals(caminhoArquivo)) {
 			File teste = new File(context.getPathArquivos());
 			String[] arquivos = teste.list();
-			
+
 			if(arquivos.length > 0) {
 				ArrayList<Integer> arqRotas = new ArrayList<Integer>();
-				
+
 				for (int i = 0; i < arquivos.length; i++) {
 					if(arquivos[i].contains("rota")) {
 						arqRotas.add(Integer.parseInt(arquivos[i].substring(arquivos[i].indexOf("-")+1, arquivos[i].indexOf("."))));
 					}
 				}
-				
+
 				if(arqRotas.size() > 0) {
 					arqRotas.sort(null);
 					maxNum = arqRotas.get(arqRotas.size() - 1) + 1;
@@ -283,7 +283,7 @@ public class VisivelWindow extends JDialog{
 				else {
 					maxNum = 0;
 				}
-				
+
 				caminhoArquivo = context.getPathArquivos() +"\\rota-"+ maxNum + ".txt";
 			}
 			else {
@@ -346,18 +346,18 @@ public class VisivelWindow extends JDialog{
     	DefaultTableModel modelo = (DefaultTableModel) table.getModel();
 		String[] array = new String[5];
 		String codOrigem, cidOrigem, codDestino, cidDestino, distancia;
-		
+
 		list = file.getAllLines();
-		
+
 		for (int i = 0; i < modelo.getRowCount(); i++) {
 			modelo.removeRow(i);
 		}
-		
+
 		for (int i = 0; i < list.size(); i++) {
 			array = list.get(i).split(";");
 			if(array.length == 5) {
-				codOrigem  = array[0]; 
-				cidOrigem  = array[1]; 
+				codOrigem  = array[0];
+				cidOrigem  = array[1];
 				codDestino = array[2];
 				cidDestino = array[3];
 				distancia  = array[4];
@@ -365,7 +365,7 @@ public class VisivelWindow extends JDialog{
 			}
 		}
     }
-    
+
 	public static void main(String[] args) throws IOException {
         new VisivelWindow().setVisible(true);
     }
