@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import file.FileReader;
+import grafos.MenorCaminho;
 
 public class VisivelWindow extends JDialog {
 	public final static String PATH_WAY_FILE = "resources/rotas.txt";
@@ -55,7 +56,7 @@ public class VisivelWindow extends JDialog {
 		// ---------------- -------------------- \\	
 		
 		// ------------- Origem ---------------- \\
-		lblCodOrigem = new JLabel("Código: ");
+		lblCodOrigem = new JLabel("Cï¿½digo: ");
 		lblCodOrigem.setBounds(10, 70, 50, 25);
 		getContentPane().add(lblCodOrigem);
 		
@@ -77,7 +78,7 @@ public class VisivelWindow extends JDialog {
 		// ---------------- -------------------- \\		
 		
 		// ------------- Destino ---------------- \\
-		lblCodDestino = new JLabel("Código: ");
+		lblCodDestino = new JLabel("Cï¿½digo: ");
 		lblCodDestino.setBounds(10, 120, 50, 25);
 		getContentPane().add(lblCodDestino);
 		
@@ -98,7 +99,7 @@ public class VisivelWindow extends JDialog {
 		getContentPane().add(lblDestino);		
 		// ---------------- -------------------- \\
 		
-		// ------------- Distância ---------------- \\
+		// ------------- Distï¿½ncia ---------------- \\
 		lblDistancia = new JLabel("KM:");
 		lblDistancia.setBounds(30, 170, 50, 25);
 		getContentPane().add(lblDistancia);
@@ -128,7 +129,19 @@ public class VisivelWindow extends JDialog {
 		buttonProcessar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				String caminho = fieldBusca.getText();
+
+				if (caminho != null && !caminho.isEmpty()) {
+					try {
+						ArrayList<String> fileReader = new FileReader(caminho)
+								.getAllLines();
+
+
+
+					} catch (IOException ex) {
+						ex.printStackTrace();
+					}
+				}
 			}
 		});
 		getContentPane().add(buttonProcessar);
@@ -145,7 +158,7 @@ public class VisivelWindow extends JDialog {
 	}
 	
 	private void configuraTabela() throws IOException {
-		String [] colunas = {"Código Origem", "Cidade Origem", "Código Destino", "Cidade Destino", "Distância"};
+		String [] colunas = {"Cï¿½digo Origem", "Cidade Origem", "Cï¿½digo Destino", "Cidade Destino", "Distï¿½ncia"};
 		DefaultTableModel modelo = new DefaultTableModel();
 		FileReader file = new FileReader(PATH_WAY_FILE);
 		ArrayList<String> list = new ArrayList<String>();
@@ -185,20 +198,20 @@ public class VisivelWindow extends JDialog {
 				cidDestino = fieldCidDestino.getText();
 				distancia  = fieldDistancia.getText();
 				
-				//Passar os campos obrigatórios para um arraylist
+				//Passar os campos obrigatï¿½rios para um arraylist
 				campos.add(codOrigem);
 				campos.add(cidOrigem);
 				campos.add(codDestino);
 				campos.add(cidDestino);
 				campos.add(distancia);
 				
-				//Passar os campos numéricos para um arraylist
+				//Passar os campos numï¿½ricos para um arraylist
 				camposNumericos.add(codOrigem);
 				camposNumericos.add(codDestino);
 				camposNumericos.add(distancia);				
 				
 				if(!verificaCamposNumericos(camposNumericos)){
-					JOptionPane.showMessageDialog(null, "Os campos 'código' e 'distância' só aceitam números!'");
+					JOptionPane.showMessageDialog(null, "Os campos 'cï¿½digo' e 'distï¿½ncia' sï¿½ aceitam nï¿½meros!'");
 				}else if(!verificaCamposObrigatorios(campos)){
 					JOptionPane.showMessageDialog(null, "Deve-se preencher todos os campos!");					
 				}else {

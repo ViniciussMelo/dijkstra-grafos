@@ -2,33 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549b2685-3a57-4474-93f8-d9add400a73e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/grafos.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Aresta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Dijkstra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Grafo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Rota.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Dijkstra.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Grafo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Rota.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/utils/file/FileWrite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Dijkstra.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ApplicationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/rotas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/rotas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" beforeDir="false" afterPath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/rotas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rotas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ConfiguracaoWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ConfiguracaoWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/VisivelWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/VisivelWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trabalho-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/trabalho-2.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +55,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -101,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Principal">
+  <component name="RunManager" selected="Application.MenorCaminho">
     <configuration name="ConfigGetter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="config.ConfigGetter" />
       <module name="utils" />
@@ -163,8 +144,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.MenorCaminho" />
+        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.Dijkstra" />
         <item itemvalue="Application.ConfigGetter" />
         <item itemvalue="Application.FileReader" />

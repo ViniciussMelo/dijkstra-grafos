@@ -9,10 +9,10 @@ public class MenorCaminho {
 
     private Dijkstra dijkstra;
     private Map<Integer, String> vertices;
-    private String[] lines;
+    private ArrayList<String> lines;
     private List<Aresta> arestas;
 
-    MenorCaminho(String[] lines) {
+    public MenorCaminho(ArrayList<String> lines) {
         vertices = new HashMap<>();
         arestas = new ArrayList<>();
         this.lines = lines;
@@ -51,13 +51,17 @@ public class MenorCaminho {
     }
 
     public static void main(String[] args) {
-        String[] lines = {
-                "1;Siderópolis;2;Criciúma;30",
-                "1;Siderópolis;3;Forquilhina;43"
-        };
-        MenorCaminho menorCaminho = new MenorCaminho(lines);
+        ArrayList<String> caminhos = new ArrayList<>();
+
+        caminhos.add("1;Siderópolis;2;Criciúma;30");
+        caminhos.add("2;Criciúma;3;Forquilhina;43");
+        caminhos.add("2;Criciúma;4;Içara;40");
+        caminhos.add("1;Siderópolis;4;Içara;25");
+        caminhos.add("4;Içara;5;Tubarao;10");
+
+        MenorCaminho menorCaminho = new MenorCaminho(caminhos);
         try {
-            menorCaminho.encontrar(1, 3);
+            menorCaminho.encontrar(1, 5);
         } catch (Exception e) {
             e.printStackTrace();
         }
