@@ -4,29 +4,36 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+
+import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
 import file.FileReader;
 
 public class VisivelWindow extends JDialog{
-	public final static String PATH_WAY_FILE = "resources/rotas.txt";
+	ApplicationContext context = Principal.context;
 	
 	JLabel lblBusca, lblCodOrigem, lblCidOrigem, lblCodDestino, lblCidDestino, lblDistancia, lblOrigem, lblDestino;
 	JTextField fieldBusca, fieldCodOrigem, fieldCidOrigem, fieldCodDestino, fieldCidDestino, fieldDistancia;
 	JButton buttonPesqusiar, buttonAdicionar, buttonSalvar, buttonProcessar;
 	JTable table;
     
+	String caminhoArquivo = "";
+	
 	public VisivelWindow() throws IOException {
 		setTitle("Dijsktra - Busca por melhor caminho");
 		setSize(800,690);
@@ -47,6 +54,7 @@ public class VisivelWindow extends JDialog{
 		
 		fieldBusca = new JTextField();
 		fieldBusca.setBounds(70, 10, 300, 25);
+		fieldBusca.enable(false);
 		getContentPane().add(fieldBusca);
 		
 		buttonPesqusiar = new JButton("Buscar");
@@ -141,10 +149,6 @@ public class VisivelWindow extends JDialog{
 	private void configuraTabela() throws IOException {
 		String [] colunas = {"Código Origem", "Cidade Origem", "Código Destino", "Cidade Destino", "Distância"};
 		DefaultTableModel modelo = new DefaultTableModel();
-		FileReader file = new FileReader(PATH_WAY_FILE);
-		ArrayList<String> list = new ArrayList<String>();
-		String[] array = new String[5];
-		String codOrigem, cidOrigem, codDestino, cidDestino, distancia;
 		
 		for (int i = 0; i < colunas.length; i++) {
 			modelo.addColumn(colunas[i]);
@@ -218,24 +222,38 @@ public class VisivelWindow extends JDialog{
 			}
 		});
 		
+		//PESQUISAR
 		buttonPesqusiar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				JFileChooser jfPastas = new JFileChooser(context.getPathArquivos());
+				jfPastas.setDialogTitle("Importar arquivos");
+				jfPastas.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				jfPastas.showOpenDialog(null);
 				
+				File arquivo = jfPastas.getSelectedFile();
+				caminhoArquivo = arquivo.toString();
+				
+				fieldBusca.setText(caminhoArquivo);
+				
+				try {
+					insereDadosTabela(arquivo);
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "Erro ao carregar os dados na tabela!\n"+e1.getMessage());
+				}
 			}
 		});
 	}
 	
-	public void gravaDadosTabela(DefaultTableModel modelo, int sizeTabela) throws IOException {
-		ApplicationContext context = new ApplicationContext();
-		
+	public void gravaDadosTabela(DefaultTableModel modelo, int sizeTabela) throws IOException {		
 		ArrayList<String> list = new ArrayList<String>();
 		String texto;
+		int maxNum = 0;
 		
 		for (int i = 0; i < sizeTabela; i++) {
 			texto = "";
-			for (int j = 0; j < modelo.getRowCount(); j++) {
+			for (int j = 0; j < modelo.getColumnCount(); j++) {
 				if("".equals(texto)) {
 					texto = (String) modelo.getValueAt(i, j);
 				}
@@ -244,8 +262,35 @@ public class VisivelWindow extends JDialog{
 				}
 			}
 			list.add(texto);
-		}				
-		context.recordWay(list, PATH_WAY_FILE);
+		}
+		if("".equals(caminhoArquivo)) {
+			File teste = new File(context.getPathArquivos());
+			String[] arquivos = teste.list();
+			
+			if(arquivos.length > 0) {
+				ArrayList<Integer> arqRotas = new ArrayList<Integer>();
+				
+				for (int i = 0; i < arquivos.length; i++) {
+					if(arquivos[i].contains("rota")) {
+						arqRotas.add(Integer.parseInt(arquivos[i].substring(arquivos[i].indexOf("-")+1, arquivos[i].indexOf("."))));
+					}
+				}
+				
+				if(arqRotas.size() > 0) {
+					arqRotas.sort(null);
+					maxNum = arqRotas.get(arqRotas.size() - 1) + 1;
+				}
+				else {
+					maxNum = 0;
+				}
+				
+				caminhoArquivo = context.getPathArquivos() +"\\rota-"+ maxNum + ".txt";
+			}
+			else {
+				caminhoArquivo = context.getPathArquivos() +"\\rota-0.txt";
+			}
+		}
+		context.recordWay(list, caminhoArquivo);
 	}
 	
 	public void limpaCampos() {
@@ -295,20 +340,30 @@ public class VisivelWindow extends JDialog{
     	return retorno;
     }
 	
-    public static void insereDadosTabela() {
-
+    public void insereDadosTabela(File arq) throws IOException {
+    	FileReader file = new FileReader(arq.toString());
+    	ArrayList<String> list = new ArrayList<String>();
+    	DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+		String[] array = new String[5];
+		String codOrigem, cidOrigem, codDestino, cidDestino, distancia;
 		
-		/*list = file.getAllLines();
+		list = file.getAllLines();
+		
+		for (int i = 0; i < modelo.getRowCount(); i++) {
+			modelo.removeRow(i);
+		}
 		
 		for (int i = 0; i < list.size(); i++) {
 			array = list.get(i).split(";");
-			codOrigem  = array[0]; 
-			cidOrigem  = array[1]; 
-			codDestino = array[2];
-			cidDestino = array[3];
-			distancia  = array[4];
-			modelo.addRow(new Object[] {codOrigem, cidOrigem, codDestino, cidDestino, distancia});
-		}*/
+			if(array.length == 5) {
+				codOrigem  = array[0]; 
+				cidOrigem  = array[1]; 
+				codDestino = array[2];
+				cidDestino = array[3];
+				distancia  = array[4];
+				modelo.addRow(new Object[] {codOrigem, cidOrigem, codDestino, cidDestino, distancia});
+			}
+		}
     }
     
 	public static void main(String[] args) throws IOException {
