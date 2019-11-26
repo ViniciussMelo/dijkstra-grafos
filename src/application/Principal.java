@@ -40,11 +40,11 @@ public class Principal {
         menuItemVisivel.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	try {
-					new VisivelWindow().setVisible(true);
-				} catch (IOException e1) {
-					
-				}
+                try {
+                    new VisivelWindow().setVisible(true);
+                } catch (IOException e1) {
+
+                }
             }
         });
 

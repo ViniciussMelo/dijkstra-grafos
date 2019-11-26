@@ -78,6 +78,7 @@ public class ConfiguracaoWindow extends JDialog {
                 
                 try {
 					context.recordPath();
+
 				} catch (IOException e1) {
 					JOptionPane.showMessageDialog(null, "Erro ao gravar caminho: \n"+e1.getMessage());
 				}

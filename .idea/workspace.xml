@@ -2,18 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549b2685-3a57-4474-93f8-d9add400a73e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/grafos.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Aresta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Grafo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/MenorCaminho.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafos/src/grafos/Rota.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Dijkstra.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Grafo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grafos/grafos/Rota.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/VisivelWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/utils/file/FileWrite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/utils/META-INF/utils.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/utils/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/utils/config/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/utils/config/ConfigGetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/utils/config/ConfigGetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/utils/file/FileWrite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ApplicationContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/application/ConfiguracaoWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trabalho-2/rotas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trabalho-2/rotas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rotas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rotas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ConfiguracaoWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ConfiguracaoWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/VisivelWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/VisivelWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trabalho-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/trabalho-2.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +52,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -48,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/grafos/src/grafos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,6 +84,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="file" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\luis_justus\Documents\Dijkstra\grafos\src\grafos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,9 +115,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfiguracaoWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="application.ConfiguracaoWindow" />
-      <module name="trabalho-2" />
+    <configuration name="Dijkstra" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grafos.Dijkstra" />
+      <module name="grafos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grafos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="file.FileWrite" />
-      <module name="utils" />
+    <configuration name="MenorCaminho" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grafos.MenorCaminho" />
+      <module name="grafos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="file.*" />
+          <option name="PATTERN" value="grafos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.MenorCaminho" />
+        <item itemvalue="Application.Dijkstra" />
         <item itemvalue="Application.ConfigGetter" />
         <item itemvalue="Application.FileReader" />
-        <item itemvalue="Application.FileWrite" />
-        <item itemvalue="Application.ConfiguracaoWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +186,8 @@
       <workItem from="1574207866518" duration="7210000" />
       <workItem from="1574299075212" duration="485000" />
       <workItem from="1574714023864" duration="605000" />
-      <workItem from="1574719798732" duration="1260000" />
+      <workItem from="1574719798732" duration="3433000" />
+      <workItem from="1574723597253" duration="4699000" />
     </task>
     <servers />
   </component>
@@ -177,32 +207,30 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/Trabalho-menor-caminho" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/application/ApplicationContext.java</url>
-          <line>8</line>
-          <properties field="automatico" class="application.ApplicationContext" />
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/grafos/src/grafos/Grafo.java</url>
+          <line>7</line>
+          <properties field="NUMERO_VERTICES" class="grafos.Grafo" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/application/ApplicationContext.java</url>
-          <line>11</line>
-          <properties field="pathErro" class="application.ApplicationContext" />
-          <option name="timeStamp" value="29" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grafos/src/grafos/Grafo.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/application/ApplicationContext.java</url>
-          <line>12</line>
-          <properties field="pathSucesso" class="application.ApplicationContext" />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/application/ApplicationContext.java</url>
-          <line>13</line>
-          <properties field="pathConfig" class="application.ApplicationContext" />
-          <option name="timeStamp" value="31" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grafos/src/grafos/Grafo.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

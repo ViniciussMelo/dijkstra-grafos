@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 import file.FileReader;
 
-public class VisivelWindow extends JDialog{
+public class VisivelWindow extends JDialog {
 	public final static String PATH_WAY_FILE = "resources/rotas.txt";
 	
 	JLabel lblBusca, lblCodOrigem, lblCidOrigem, lblCodDestino, lblCidDestino, lblDistancia, lblOrigem, lblDestino;
@@ -125,6 +125,12 @@ public class VisivelWindow extends JDialog{
 		
 		buttonProcessar = new JButton("PROCESSAR");
 		buttonProcessar.setBounds(545, 620, 110, 25);
+		buttonProcessar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		getContentPane().add(buttonProcessar);
 		// ---------------- -------------------- \\
 	}
